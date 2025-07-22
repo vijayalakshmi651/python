@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-07-14T15:03:24.324013" rpa="false" schemaversion="5">
+<suite id="s1" name="Rap File" source="C:\Users\kotha\vijaya\rpa_python\rap_file.robot">
+<test id="s1-t1" name="check for directory" line="6">
+<kw name="Mk Dir" owner="os_py">
+<msg time="2025-07-14T15:03:24.368887" level="FAIL">FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'vicky1'</msg>
+<var>${result}</var>
+<status status="FAIL" start="2025-07-14T15:03:24.368502" elapsed="0.001290">FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'vicky1'</status>
+</kw>
+<kw name="Directory Should Exist" owner="OperatingSystem">
+<arg>${result}</arg>
+<doc>Fails unless the given path points to an existing directory.</doc>
+<status status="NOT RUN" start="2025-07-14T15:03:24.370133" elapsed="0.000028"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-14T15:03:24.370352" elapsed="0.000019"/>
+</kw>
+<status status="FAIL" start="2025-07-14T15:03:24.367416" elapsed="0.003279">FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'vicky1'</status>
+</test>
+<test id="s1-t2" name="check for Directories" line="11">
+<kw name="Mk Dirs" owner="os_py">
+<msg time="2025-07-14T15:03:24.373034" level="INFO">${result} = child1/parent/grandfather</msg>
+<var>${result}</var>
+<status status="PASS" start="2025-07-14T15:03:24.372197" elapsed="0.000909"/>
+</kw>
+<kw name="Directory Should Exist" owner="OperatingSystem">
+<msg time="2025-07-14T15:03:24.373618" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\kotha\vijaya\rpa_python\child1\parent\grandfather"&gt;C:\Users\kotha\vijaya\rpa_python\child1\parent\grandfather&lt;/a&gt;' exists.</msg>
+<arg>${result}</arg>
+<doc>Fails unless the given path points to an existing directory.</doc>
+<status status="PASS" start="2025-07-14T15:03:24.373368" elapsed="0.000306"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-14T15:03:24.373871" elapsed="0.000212"/>
+</kw>
+<status status="PASS" start="2025-07-14T15:03:24.371750" elapsed="0.002535"/>
+</test>
+<test id="s1-t3" name="check for removed directories" line="17">
+<kw name="Rmdir" owner="os_py">
+<msg time="2025-07-14T15:03:24.376359" level="INFO">${result} = vijaya</msg>
+<var>${result}</var>
+<status status="PASS" start="2025-07-14T15:03:24.375081" elapsed="0.001377"/>
+</kw>
+<kw name="Directory Should Not Exist" owner="OperatingSystem">
+<msg time="2025-07-14T15:03:24.376980" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\kotha\vijaya\rpa_python\vijaya"&gt;C:\Users\kotha\vijaya\rpa_python\vijaya&lt;/a&gt;' does not exist.</msg>
+<arg>${result}</arg>
+<doc>Fails if the given path points to an existing file.</doc>
+<status status="PASS" start="2025-07-14T15:03:24.376752" elapsed="0.000325"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-14T15:03:24.377540" elapsed="0.000499"/>
+</kw>
+<status status="PASS" start="2025-07-14T15:03:24.374792" elapsed="0.003406"/>
+</test>
+<test id="s1-t4" name="check for removed files" line="21">
+<kw name="Remove" owner="os_py">
+<msg time="2025-07-14T15:03:24.379778" level="INFO">${result} = file.txt</msg>
+<var>${result}</var>
+<status status="PASS" start="2025-07-14T15:03:24.378924" elapsed="0.000895"/>
+</kw>
+<kw name="File Should Not Exist" owner="OperatingSystem">
+<msg time="2025-07-14T15:03:24.380305" level="INFO" html="true">File '&lt;a href="file://C:\Users\kotha\vijaya\rpa_python\file.txt"&gt;C:\Users\kotha\vijaya\rpa_python\file.txt&lt;/a&gt;' does not exist.</msg>
+<arg>${result}</arg>
+<doc>Fails if the given path points to an existing file.</doc>
+<status status="PASS" start="2025-07-14T15:03:24.380063" elapsed="0.000312"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-14T15:03:24.380566" elapsed="0.000228"/>
+</kw>
+<status status="PASS" start="2025-07-14T15:03:24.378658" elapsed="0.002299"/>
+</test>
+<test id="s1-t5" name="check for rename" line="25">
+<kw name="Rename" owner="os_py">
+<msg time="2025-07-14T15:03:24.382567" level="INFO">${result} = newtext.txt</msg>
+<var>${result}</var>
+<status status="PASS" start="2025-07-14T15:03:24.381630" elapsed="0.000981"/>
+</kw>
+<kw name="File Should Exist" owner="OperatingSystem">
+<msg time="2025-07-14T15:03:24.383096" level="INFO" html="true">File '&lt;a href="file://C:\Users\kotha\vijaya\rpa_python\newtext.txt"&gt;C:\Users\kotha\vijaya\rpa_python\newtext.txt&lt;/a&gt;' exists.</msg>
+<arg>${result}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="PASS" start="2025-07-14T15:03:24.382836" elapsed="0.000313"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-14T15:03:24.383307" elapsed="0.000166"/>
+</kw>
+<status status="PASS" start="2025-07-14T15:03:24.381373" elapsed="0.002236"/>
+</test>
+<test id="s1-t6" name="check for change directory" line="31">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-07-14T15:03:24.384238" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\kotha\vijaya\rpa_python\vicky1"&gt;C:\Users\kotha\vijaya\rpa_python\vicky1&lt;/a&gt;' already exists.</msg>
+<arg>vicky1</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-07-14T15:03:24.384112" elapsed="0.000172"/>
+</kw>
+<kw name="Change Directory">
+<msg time="2025-07-14T15:03:24.385294" level="FAIL">No keyword with name 'Change Directory' found.</msg>
+<arg>vicky1</arg>
+<status status="FAIL" start="2025-07-14T15:03:24.385262" elapsed="0.000069">No keyword with name 'Change Directory' found.</status>
+</kw>
+<kw name="Getcwd" owner="os_py">
+<var>${result}</var>
+<status status="NOT RUN" start="2025-07-14T15:03:24.385483" elapsed="0.000020"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-14T15:03:24.385629" elapsed="0.000019"/>
+</kw>
+<status status="FAIL" start="2025-07-14T15:03:24.383854" elapsed="0.001957">No keyword with name 'Change Directory' found.</status>
+</test>
+<status status="FAIL" start="2025-07-14T15:03:24.325347" elapsed="0.060904"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Rap File" id="s1" pass="4" fail="2" skip="0">Rap File</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

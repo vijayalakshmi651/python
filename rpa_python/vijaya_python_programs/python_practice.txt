@@ -1,0 +1,26 @@
+
+import re
+
+class regex:
+	def __init__(self,text):
+	    self.text=text
+	def search(self):
+	    pattern=re.search(r"hello",self.text)
+	    print(pattern.group())
+	def findall(self):
+	    pattern1=re.findall(r"[a-z]{3}",self.text)
+	    pattern2=re.findall(r"[A-Z]+",self.text)
+	    pattern3=re.findall(r"\d+",self.text)
+	    print(pattern1,pattern2,pattern3)
+        def method(self):
+	    pattern = re.findall(r"[a-z]",self.text)
+	    print(pattern)
+
+
+obj1=regex("helloo vijaya lakshmi")
+obj1.search()
+obj2=regex("Hii Vijaya Lakshmii651")
+obj2.findall()
+obj3=regex("I am Learning Python")
+obj3.method()
+
